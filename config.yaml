@@ -1,0 +1,49 @@
+project_dir:
+  /project/personal/chenzh/test/find_peak_pipeline/result/
+target_gene:
+  /project/personal/chenzh/test/find_peak_pipeline/target_gene
+script_dir:
+  /project/personal/chenzh/test/find_peak_pipeline/script/
+cancer_bam:
+  /project/personal/chenzh/test/find_peak_pipeline/cancer_bam_file
+health_bam:
+  /project/personal/chenzh/test/find_peak_pipeline/health_bam_file
+
+
+
+#1. 统计深度功能：
+count_depth: yes
+#2. peak的寻找：
+find_peak: yes
+#3. peak的定量：
+exp_count: yes
+#4. peak的评估：
+peak_rate: yes
+
+
+
+#DEG info
+group:
+  Treatment:
+    HCC1,HCC2,HCC3,HCC4,HCC5,HCC6,HCC7
+  Control:
+    health1,health2,health3,health4,health5,health6,health7
+DEG_info:
+  Treatment_vs_Control
+DEG_software: DEseq2 #DEseq2 or edgeR
+
+
+
+#find peak的指标：
+min_peak_h: 10 #必要参数，peak峰值最低高度
+sample_min: 7 #必要参数，符合条件的样本个数
+all_sample_num: 7 #必要参数
+#非必要参数：
+distance: 40
+wlen: 80
+min_depth: 5
+
+
+
+#选择gtf，
+input_gtf: /project/personal/chenzh/genome/hg38_p13/hg38_p13_longest_transcipt.gtf 
